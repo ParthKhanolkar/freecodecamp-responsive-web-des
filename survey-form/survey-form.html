@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Space Exploration Survey Form</title>
+	<link rel="stylesheet" type="text/css" href="survey-form.css">
+	<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</head>
+<body>
+	<header>
+	<div id="title"><h1>Space Exploration Survey Form<h1></div>
+	<p id="description">People's opinions about the emergence of a brand new space economy in the 21<sup>st</sup> century</p>
+	</header>
+	<main>
+	<form id="survey-form">
+		<div class="form-data">
+		<label id="name-label" for="name" class="input-label">Name:</label><br>
+		<input type="text" id="name" class="survey-form-control" name="name" placeholder="Enter your Name" required>
+		<br><br>
+
+		<label id="email-label" for="email" class="input-label">Email:</label><br>
+		<input type="email" id="email" class="survey-form-control" name="email" placeholder="Enter your Email" required>
+		<br><br>
+
+		<label id="number-label" for="name" class="input-label">Age:</label><br>
+		<input type="number" id="number" class="survey-form-control" name="number" min="18" max="70" placeholder="Enter your Age" required>
+		<br><br>
+
+		<p class ="drop input-label">Enter your field of education</p>
+		<select id="dropdown" name="degree" required>
+			<option selected disabled>Select field of education</option>
+			<option value="science">Science</option>
+			<option value="commerce">Commerce</option>
+			<option value="arts">Arts</option>
+			<option value="other">Other</option>
+		</select>
+
+		<section class="multiple">
+			<p>What are your opinions about the sudden rise in space technology considering the current state of the world?</p>
+			<input id="mainstream" type="radio" name="opinion">
+			<label for="mainstream">Space technology should be brought to the mainstream</label><br>
+			<input id="focused" type="radio" name="opinion">
+			<label for="focused">Space technology should be focused as a priority</label><br>
+			<input id="not-a-priority" type="radio" name="opinion">
+			<label for="not-a-priority">Space technology should not be a priority</label><br>
+			<input id="banned" type="radio" name="opinion">
+			<label for="banned">Space technology should be banned</label><br>
+		</section>
+
+		<section class="multiple">
+			<p>Which upcoming space technology most exites you?</p>		
+			<label for="space-hotel"><input id="space-hotel" type="checkbox" value="space-hotel" name="space-tech"> Space hotels</label><br>		
+			<label for="moon-base"><input id="moon-base" type="checkbox" value="moon-base" name="space-tech"> Artemis Moon base </label><br>		
+			<label for="mars-base"><input id="mars-base" type="checkbox" value="mars-base" name="space-tech"> SpaceX Mars base</label><br>		
+			<label for="fuel-carrier"><input id="fuel-carrier" type="checkbox" value="fuel-carrier" name="space-tech"> Spacecraft fuel carriers</label><br>		
+			<label for="mining"><input id="mining" type="checkbox" value="mining" name="space-tech"> Mining minerals from celestial bodies</label><br>
+			<label for="deep-space-exploration"><input id="deep-space-exploration" type="checkbox" value="deep-space-exploration" name="space-tech"> Deep space exploration</label>
+			<br>
+		</section>
+
+		<section class="text-area">
+	      	<p>Anything you would like to add?</p>
+	      	<textarea id="comments" name="comment" placeholder="Enter your comment here..."></textarea>
+  		</section>
+
+  		<section class="form-group">
+            <button type="submit" id="submit">Submit Response</button>
+    	</section>
+		</div>
+	</form>
+	</main>
+</body>
+</html>

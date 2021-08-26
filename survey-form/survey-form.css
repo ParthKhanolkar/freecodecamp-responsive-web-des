@@ -1,0 +1,229 @@
+body
+{
+	background: rgb(181,95,255);
+	background: linear-gradient(90deg, rgba(181,95,255,1) 0%, rgba(0,212,255,1) 66%, rgba(223,174,212,1) 100%); 
+}
+
+header p{
+	text-align: center;
+	font-size: 30px;
+	color: white;
+}
+#title
+{
+	padding: 30px;
+	background-color: black;
+	color: white;
+	font-size: 35px;
+	text-align: center;
+}
+
+#survey-form
+{
+	width: 900px;
+	margin: 0 auto;
+	border: 10px solid whitesmoke;
+}
+
+.survey-form-control
+{
+	width: 100%;
+	line-height: 35px;
+	font-size: 25px;
+	border: 0px;
+	border-radius: 10px;
+}
+
+.form-data
+{
+	margin: 70px;
+
+}
+.input-label
+{
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.drop
+{
+	font-size: 25px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-weight: bold;
+}
+#dropdown
+{
+	width: 100%;
+	line-height: 35px;
+	font-size: 25px;
+	border: 0px;
+	border-radius: 10px;
+}
+
+.multiple
+{
+	font-size: 25px;
+	font-weight: bold;
+
+}
+
+.multiple p
+{
+	margin-bottom: 0px;
+}
+
+#comments
+{
+	width: 100%;
+	min-height: 180px;
+	font-size: 25px;
+	border-radius: 10px;
+}
+
+.text-area
+{
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.text-area p
+{
+	margin-bottom: 5px;
+}
+
+#submit
+{
+	width: 100%;
+	background-color: red;
+	border: 0px;
+	font-size: 25px;
+	color: white;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 10px;
+}
+
+#submit:hover
+{
+	background-color: darkred;
+}
+
+@media (max-width: 960px)
+{
+	#survey-form
+	{
+		width: 90%;
+	}
+}
+
+
+@media (max-width: 870px)
+{
+	#title
+	{
+		font-size: 1.5em;
+	}
+
+	#description
+	{
+		font-size: 1.3em;
+	}
+
+	#survey-form
+	{
+		border: 5px solid whitesmoke;
+	}
+
+	.input-label
+	{
+		font-size: 20px;
+	}
+
+	.survey-form-control 
+	{
+		line-height: 25px;
+		font-size: 15px;
+	}
+
+	#dropdown, .multiple
+	{
+		font-size: 20px;
+	}
+
+
+	.text-area p 
+	{
+		font-size: 20px;
+	}
+
+	#comments
+	{
+		font-size: 20px;
+		min-height: 130px;
+	}
+
+	#submit
+	{
+		padding-top: 5px;
+		padding-bottom: 5px;
+		font-size: 20px;
+	}
+
+
+}
+
+@media (max-width: 475px)
+{
+	#title
+	{
+		font-size: 1.2em;
+	}
+
+	#description
+	{
+		font-size: 1.1em;
+	}
+
+	#survey-form
+	{
+		border: 2.5px solid whitesmoke;
+	}
+
+	.input-label
+	{
+		font-size: 15px;
+	}
+
+	.survey-form-control 
+	{
+		line-height: 20px;
+		font-size: 13px;
+	}
+
+	#dropdown, .multiple
+	{
+		font-size: 15px;
+	}
+
+
+	.text-area p 
+	{
+		font-size: 15px;
+	}
+
+	#comments
+	{
+		font-size: 15px;
+		min-height: 90px;
+	}
+
+	#submit
+	{
+		padding-top: 1px;
+		padding-bottom: 1px;
+		font-size: 15px;
+	}
+
+
+}
