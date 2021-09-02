@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>Product Landing Page</title>
 	<link rel="stylesheet" type="text/css" href="landing-page.css">
+	<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.j"></script>
 </head>
 <body>
 	<header id="header">
@@ -12,7 +13,7 @@
 			<ul class="nav-ul">
 				<li><a href="#about-us" class="nav-link">ABOUT US</a></li>
 				<li><a href="#our-services" class="nav-link">OUR SERVICES</a></li>
-				<li><a href="#" class="nav-link">CONTACT US</a></li>
+				<li><a href="#contact-us" class="nav-link">CONTACT US</a></li>
 			</ul>
 		</nav>	
 	</header>
@@ -42,7 +43,7 @@
 		<section class="our-services" id="our-services">
 			<h2>OUR SERVICES</h2>
 			<p class="katana">▬▬ι═══════ﺤ</p>
-		<section class="services">
+		<div class="services">
 			<div class="service" id="find-parts" onclick="location.href='#';" style="cursor: pointer;">
 				<div class="title">FIND PARTS</div>
 			</div>
@@ -52,7 +53,36 @@
 			<div class="service" id="repairing" onclick="location.href='#';" style="cursor: pointer;">
 				<div class="title">REPAIRING AND TROUBLESHOOTING</div>
 			</div>
+		</div>
 		</section>
+
+		<section class="contact-us" id="contact-us">
+			<h2>CONTACT US</h2>
+			<p class="katana">▬▬ι═══════ﺤ</p>
+			<p>We look forward to hearing from you.</p>
+			<div class="contact">
+				<div id="address-phone">							
+					<p>
+						<img src="Icons/location.png" id="address" alt="address"><br>
+						xxxxxxxxx<br>
+						xxxxxxxxx<br>
+						xxxxxxxxx<br>
+						xxxxxxxxx<br>
+					</p>										
+					<p><img src="Icons/phone_icon.png" id="phone-icon" alt="Phone"><br>xxx-xxx-xxxx</p>					
+				</div>
+				<div id="email-social-media">					
+					<p><img src="Icons/email_icon.png" id="email-icon" alt="Email"><br>xxxx@xxxx.xxx</p>
+
+					<div id="icons">
+					<img src="Icons/facebook_icon.png" id="facebook-icon" alt="Facebook">
+					<img src="Icons/instagram_icon.png" id="instagram-icon" alt="Instagram">
+					<img src="Icons/twitter_icon.png" id="twitterr-icon" alt="Twitter">
+					<img src="Icons/google_media_plus_icon.png" id="google-icon" alt="Google-Media">
+					<img src="Icons/linkedin_icon.png" id="linkedin-icon" alt="Linkedin">
+					</div>
+				</div>
+			</div>
 		</section>
 	</main>
 </body>

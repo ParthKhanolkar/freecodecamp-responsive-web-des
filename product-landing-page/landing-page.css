@@ -180,3 +180,97 @@ main
 	background-image: url(Images/repair.jpg);
 	background-size: 100% 100%;
 }
+
+.contact-us
+{
+	background-color: #b84b66;
+}
+
+.contact-us h2{
+	text-align: center;
+	color: white;
+	font-size: 40px;
+	font-family: sans-serif;
+	padding-top: 30px;
+}
+
+.contact-us p
+{
+	text-align: center;
+	font-size: 30px;
+	color: white;
+	font-family: sans-serif;
+}
+
+.contact
+{
+	display: flex;
+	justify-content: space-evenly;
+}
+
+@media (max-width: 930px)
+{
+	.services
+	{
+		flex-direction: column;
+	}
+
+	.service
+	{
+		margin: auto;
+	}
+}
+
+@media (max-width: 700px)
+{
+
+	#nav-bar
+	{
+		justify-content: space-between;
+	}
+	.contact
+	{
+		flex-direction: column;
+	}
+
+	#icons
+	{
+		display: flex;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 655px)
+{
+	#form h2, .who-we-are h2, .our-services h2, .contact-us h2
+	{
+		font-size: 30px;
+	}
+
+	#form p, .who-we-are p, .our-services p, .contact-us p
+	{
+		font-size: 20px;
+	}
+
+	#nav-bar
+	{
+		flex-direction: column;
+		text-align: center;
+	}
+
+	#header-img
+	{
+		height: 100px;
+		width: 150px;
+		margin: auto;
+	}
+	.nav-ul{
+		flex-direction: column;
+	}
+
+	main{
+		margin-top: 316px;
+	}
+
+
+}
