@@ -10,21 +10,49 @@
 		<nav id="nav-bar">
 			<img src="Images/logo.png" id="header-img" alt="Ninja" title="Ninja">
 			<ul class="nav-ul">
-				<li><a href="#" class="nav-link">ABOUT US</a></li>
-				<li><a href="#" class="nav-link">OUR SERVICES</a></li>
+				<li><a href="#about-us" class="nav-link">ABOUT US</a></li>
+				<li><a href="#our-services" class="nav-link">OUR SERVICES</a></li>
 				<li><a href="#" class="nav-link">CONTACT US</a></li>
 			</ul>
 		</nav>	
 	</header>
 	<main>
 		<section class="top-blg">
-
 			<form id="form" action="https://www.freecodecamp.com/email-submit">
 				<h2>Gaming Hardware and Accessories</h2>
-				<p>Welcome to Ninja hardware and accessories store!<br>We provide the latest gaming hardware tou need to build your next gaming PC<br>Subscribe to our newsletter</p>
+				<p class="katana">▬▬ι═══════ﺤ</p>
+				<p>Welcome to Ninja hardware and accessories store!<br>We provide the latest gaming hardware you need to build your next gaming PC.<br>Subscribe to our newsletter.</p>
 				<input type="email" name="email" id="email" placeholder="Enter your email address">
-			</form>
-			
+				<div class="subscribe-btn">
+					<input id="submit" type="submit" value="Subscribe" class="btn"/>
+				</div>
+			</form>			
+		</section>
+
+		<section class="who-we-are" id="about-us">
+			<h2>ABOUT US</h2>
+			<p class="katana">▬▬ι═══════ﺤ</p>
+			<p>We provide high quality hardware services and devices such as monitors, CPUs, GPUs and peripheral devices.<br>We provide pre assembled PCs and assembly training.<br>
+			We also provide repairing and troubleshooting services.</p>
+			<div id="video">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/wl00f0EjZHs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+		</section>
+
+		<section class="our-services" id="our-services">
+			<h2>OUR SERVICES</h2>
+			<p class="katana">▬▬ι═══════ﺤ</p>
+		<section class="services">
+			<div class="service" id="find-parts" onclick="location.href='#';" style="cursor: pointer;">
+				<div class="title">FIND PARTS</div>
+			</div>
+			<div class="service" id="custom-built" onclick="location.href='#';" style="cursor: pointer;">
+				<div class="title">CUSTOM BUILT PC</div>
+			</div>
+			<div class="service" id="repairing" onclick="location.href='#';" style="cursor: pointer;">
+				<div class="title">REPAIRING AND TROUBLESHOOTING</div>
+			</div>
+		</section>
 		</section>
 	</main>
 </body>

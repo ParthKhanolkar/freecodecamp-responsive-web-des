@@ -48,6 +48,7 @@ main
 	margin-top: 99px;
 }
 
+/*form*/
 .top-blg
 {
 	background-color: #b84b66;
@@ -63,14 +64,119 @@ main
 #form h2{
 	color: white;
 	font-size: 40px;
+	font-family: sans-serif;
 }
 
 #form p{
 	color: white;
 	font-size: 30px;
+	font-family: sans-serif;
 }
 
 #email
 {
 	font-size: 20px;
+	border: 1px solid black;
+}
+
+.subscribe-btn
+{
+	padding-top: 15px;
+}
+
+#submit
+{
+	font-size: 18px;
+	border: 0;
+	background-color: #f5bc42;
+	border-radius: 40%;
+}
+
+.who-we-are
+{
+	margin-bottom: 40px;
+}
+.who-we-are h2
+{
+	text-align: center;
+	font-size: 40px;
+	font-family: sans-serif;
+}
+
+.who-we-are p
+{
+	text-align: center;
+	font-size: 30px;
+	font-family: sans-serif;
+}
+
+#video
+{
+	display: flex;
+	justify-content: center;
+}
+
+.our-services
+{
+	background-color: #4da6ff;
+}
+
+.our-services h2{
+	text-align: center;
+	color: white;
+	font-size: 40px;
+	font-family: sans-serif;
+	padding-top: 30px;
+}
+
+.our-services p
+{
+	text-align: center;
+	font-size: 30px;
+	color: white;
+	font-family: sans-serif;
+}
+.services
+{
+	display: flex;
+	justify-content: space-evenly;
+	flex-direction: row;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.service
+{
+	border: 5px solid white;
+	border-radius: 10%;
+	width: 350px;
+	height: 250px;
+	color: #ff0066;
+	text-align: center;
+}
+
+.title
+{
+	font-size: 30px;
+	font-family: sans-serif;
+	font-weight: bold;
+	padding-top: 100px;
+}
+
+#find-parts
+{
+	background-image: url(Images/parts.jpg);
+	background-size: 100% 100%;
+}
+
+#custom-built
+{
+	background-image: url(Images/custom.jpg);
+	background-size: 100% 100%;
+}
+
+#repairing
+{
+	background-image: url(Images/repair.jpg);
+	background-size: 100% 100%;
 }
