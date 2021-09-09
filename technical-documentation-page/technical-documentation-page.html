@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>8051 Microcontroller Basics</title>
+</head>
+<body>
+	<main id="main-doc">
+		<section class="main-section" id="What_is_a_microcontroller?">
+			<header>What is a microcontroller?</header>
+			<p>A microcontroller is a compact integrated circuit designed to govern a specific operation in an embedded system. A typical microcontroller includes a processor, memory and input/output (I/O) peripherals on a single chip.</p>
+
+			<p>Sometimes referred to as an embedded controller or microcontroller unit (MCU), microcontrollers are found in vehicles, robots, office machines, medical devices, mobile radio transceivers, vending machines and home appliances, among other devices. They are essentially simple miniature personal computers (PCs) designed to control small features of a larger component, without a complex front-end operating system (OS).</p>
+
+			<ul>
+				<li>It is semiconductor device</li>
+				<li>Consists of various Logic Circuits</li>
+				<li>It is manufactured by using LSI or VLSI techniques</li>
+			</ul>
+			<ul>
+				<li>Logic Circuits:
+					<ol>
+						<li>Combinational Circuits: Gates, MUX</li>
+						<li>Sequential Circuits: F/F, Memory</li>
+					</ol>
+				</li>
+				<li>Scale of Integration:
+					<ol>
+						<li>SSI for less than 100 gates</li>
+						<li>MSI for less than 1000 gates</li>
+						<li>LSI for less than 1,00,000 gates</li>
+						<li>SLSI for more than 1,00,000 gates</li>
+					</ol>
+					(Remeber that the definitions of the above terms change frequently based on the progress in current technology)
+				</li>
+			</ul>
+		</section>
+
+		<section class="main-section" id="Microcontroller_memory">
+			<header>Microcontroller memory</header>
+			<p>Memory of a microcontroller (or mostly any electronic device) is a physically built semiconductor capable of storing information in the form of bits (0s and 1s).
+				0s and 1s are actually voltage levels where in general 0s refer to 0V and 1s refer to 5V.<br>
+			NOTE: Bits defined on voltge levels are not the same for all devices and may change.<br>
+			Each device has a specific memory size. Let us consider a sample memory size M.</p>
+
+			<p>Buses are specific pathways for data to be stored into the devices' memory.<br>There are three types of buses:</p>
+			<ul>
+				<li>Address Bus (P): 2<sup>p</sup> = M</li>
+				<li>Data Bus(N)</li>
+				<li>Control Bus</li>
+			</ul>
+
+			<p class="sub-heading">Examples of calculating memory sizes based on Address Bus and Data Bus:<br>
+			NOTE: THe memory locations are displayed by hexadecimal numbers</p>
+			<ol>
+				<li>Suppose P = 4 and N = 8</li>
+				<ul>
+					<li>Memory Size = 2<sup>4</sup> x 8 = 16 x 8 = 16 bytes</li>
+					<li>First Address = 00H</li>
+					<li>Last Address = 0FH</li>
+				</ul>
+
+				<li>Suppose P = 7 and N = 8</li>
+				<ul>
+					<li>Memory Size = 2<sup>7</sup> x 8 = 128 x 8 = 128 bytes</li>
+					<li>First Address = 00H</li>
+					<li>Last Address = 7FH</li>
+				</ul>
+
+				<li>Suppose P = 10 and N = 8</li>
+				<ul>
+					<li>Memory Size = 2<sup>10</sup> x 8 = 1024 x 8 = 1Kb</li>
+					<li>First Address = 00H</li>
+					<li>Last Address = 0FH</li>
+				</ul>
+
+
+				<li>Suppose P = 11 and N = 8</li>
+				<ul>
+					<li>Memory Size = 2<sup>11</sup> x 8 = 2048 x 8 = 2Kb</li>
+					<li>First Address = 00H</li>
+					<li>Last Address = 0FH</li>
+				</ul>
+			</ol>
+
+			<p class="sub-heading">Memory Size Table:</p>
+			
+			<table class="memory-size-table">
+				<caption>Assume N = 8</caption>
+				<thead>
+				<tr>
+				<th>Sr No.</th>
+				<th>P (Address Lines)</th>
+				<th>Memory Size</th>
+				<th>Address in HEX</th>
+				</tr>
+				</thead>
+
+				<tbody>
+				<tr>
+				<td>1</td>
+				<td>10</td>
+				<td>2<sup>10</sup> = 1024 x 8 = 1KB</td>
+				<td>000H to 3FFH</td>
+				</tr>
+
+				<tr>
+				<td>2</td>
+				<td>11</td>
+				<td>2<sup>11</sup> = 2048 x 8 = 1KB</td>
+				<td>000H to 7FFH</td>
+				</tr>
+
+				<tr>
+				<td>3</td>
+				<td>12</td>
+				<td>2<sup>12</sup> = 4096 x 8 = 1KB</td>
+				<td>000H to FFFH</td>
+				</tr>
+
+				<tr>
+				<td>4</td>
+				<td>13</td>
+				<td>2<sup>13</sup> = 8192 x 8 = 1KB</td>
+				<td>0000H to 1FFFH</td>
+				</tr>
+
+				<tr>
+				<td>5</td>
+				<td>14</td>
+				<td>2<sup>14</sup> = 16384 x 8 = 1KB</td>
+				<td>0000H to 3FFFH</td>
+				</tr>
+
+				<tr>
+				<td>6</td>
+				<td>15</td>
+				<td>2<sup>15</sup> = 32768 x 8 = 1KB</td>
+				<td>0000H to 7FFFFH</td>
+				</tr>
+
+				<tr>
+				<td>7</td>
+				<td>16</td>
+				<td>2<sup>16</sup> = 65536 x 8 = 1KB</td>
+				<td>0000H to FFFFH</td>
+				</tr>
+				</tbody>
+			</table>
+		</section>
+
+		<section class="main-section" id="Features_of_8051_mirocontroller">
+			<header>Features of 8051 microcontroller</header>
+			<p>In 1981, Intel corporation introduced an [8-bit microcontroller] called the 8051 microcontroller.</p>
+
+			<figure>
+				<img src="Images/8051_photo.jpg" id="8051_photo" alt="8051 microcontroller IC package">
+				<figcaption>8051 microcontroller IC package</figcaption>
+			</figure>
+			<ul>
+				<li>4 kilobytes (4096 bytes) ROM on chip.</li>
+				<li>128 bytes on chip RAM.</li>
+				<li>32 bidirectional I/O lines organised as four 8-bit ports(P0, P1, P2 and P3)</li>
+				<li>4 kilobytes (4096 bytes) ROM on chip.</li>
+				<li>128 bytes on chip RAM.</li>
+				<li>32 bidirectional I/O lines organised as four 8-bit ports(P0, P1, P2 and P3).</li>
+				<li>Two multiple mode, 16-bit Timer / counter.</li>
+				<li>Multiple mode, high speed programmable serial port.</li>
+				<li>Two-level interrupt structure.</li>
+				<li>Four register banks of 8 registers each.</li>
+				<li>128 user defined software flags.</li>
+				<li>64 kilobytes of external memory access.</li>
+				<li>256 I/O devices can interface.</li>
+				<li>Integrated Boolean processor for control application.</li>
+				<li>Direct byte and bit addressability.</li>
+				<li>Single + 5V power supply operation.</li>
+				<li>NMOS technology.</li>
+				<li>It is referred as “system on chip”.</li>
+			</ul>
+			<p>It is an 8- bit processor, means processor (CPU) can work on only 8 bits of a data at a time. Data larger than 8 bit has to be broken into 8 pieces to be processed by the CPU.</p>
+			<ul>
+				<li>Binary or singed arithmetic.</li>
+				<li>Signed overflow detection.</li>
+				<li>Parity computation.</li>
+				<li>Hardware multiple and divide in 4 microseconds.</li>
+				<li>Available in DIP plastic packaging.</li>
+				<li>It is a 40-pin IC.</li>
+			</ul>
+
+			<p class="sub-heading">Block diagram of 8051 microcontroller</p>
+			<figure>
+			<img src="Images/8051_Block_Diagram.png" id="8051_Block_Diagram" alt="8051 Block Diagram">
+			<figcaption>Block Diagram Of 8051 Microcontroller</figcaption>
+			</figure>
+			<p>The above figure shows internal block diagram of 8051. It consists of Central Processing Unit (CPU), two kinds 
+			of memory (1) DATA RAM and (2) Programmable ROM / EPROM; Input/output ports, mode status and data registers.
+			These elements communicate through an eight-bit data bus which runs through the chip referred as internal data bus.</p>
+		</section>
+		<section class="main-section">
+			<header>Program Status Word (PSW)</header>
+			<table class="PSW-structure">
+				<caption>Bits of the PSW register</caption>
+				<thead>
+					<tr>
+					<th>(MSB)</th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th>(LSB)</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>CY</td>
+						<td>AC</td>
+						<td>F0</td>
+						<td>RS1</td>
+						<td>RS0</td>
+						<td>OV</td>
+						<td>-</td>
+						<td>P</td>
+					</tr>
+				</tbody>
+
+			</table>
+
+			<table class="flag-functions">
+				<caption>Flags represented by the bits and their functions</caption>
+				<thead>
+					<tr>
+						<th>Symbol</th>
+						<th>Position</th>
+						<th>Function</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>CY</td>
+						<td>PSW.7</td>
+						<td>Carry Flag</td>
+					</tr>
+					<tr>
+						<td>AC</td>
+						<td>PSW.6</td>
+						<td>Auxiliary Carry Flag. For BCD Operations</td>
+					</tr>
+					<tr>
+						<td>F0</td>
+						<td>PSW.5</td>
+						<td>Flag 0. Available to the user for general purposes</td>
+					</tr>
+					<tr>
+						<td>RS1</td>
+						<td>PSW.4</td>
+						<td rowspan="2">Register bank select bits. Set by software to determine which registers are being used</td>
+					</tr>
+					<tr>
+						<td>RS0</td>
+						<td>PSW.3</td>
+					</tr>
+					<tr>
+						<td>OV</td>
+						<td>PSW.2</td>
+						<td>Overflow Flag</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td>PSW.1</td>
+						<td>Not used</td>
+					</tr>
+					<tr>
+						<td>P</td>
+						<td>PSW.0</td>
+						<td>Partiy Flag. Even Parity</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p class="sub-heading">Basic information bout the PSW register</p>
+			<ul>
+				<li>It is an 8-bit register.</li>
+				<li>It is also referred as flag register.</li>
+				<li>Only 6 bits of the PSW are used by 8051.</li>
+				<li>Two unused bits are user definable flags.</li>
+				<li>Four of the flags are called as conditional flags. They are CY, P, AC and OV.</li>
+				<li>Two of the flags are used to select register bank.</li>
+			</ul>
+
+			<p class="sub-heading">CY (Carry Flag):</p>
+			<ul>
+				<li>This flag is set whenever there is carry out from of bit.</li>
+				<li>This flag bit is affected after an 8-bit addition or subtraction.</li>
+				<li>It can also be set to 1 or 0 directly by an instruction such as ‘SETB’ (Set Bit Carry) and ‘CLR C’(Clear Carry).</li>
+			</ul>
+
+			<p class="sub-heading">AC (Auxiliary Flag):</p>
+			<ul>
+				<li>This flag is affected only after addition.</li>
+				<li>If there is a carry from D3 to D4 bit during an addition, this bit is set otherwise this bit is reset.</li>
+				<li>This flag is used by an instruction that performs BCD addition.</li>
+			</ul>
+
+			<p class="sub-heading">P (Parity Flag):</p>
+			<ul>
+				<li>This flag is affected by number of 1s in an accumulator register.</li>
+				<li>If the A register containins an odd number of 1’s then this flag is set, otherwise if the number of 1’s in the A register is even then this bit is reset.</li>
+			</ul>
+
+			<p class="sub-heading">OV (Overflow Flag):</p>
+			<ul>
+				<li>This flag is set whenever the result of a signed number operation is too large, otherwise it is reset.</li>
+				<li>If you want to divide any number by zero then the result is too large (infinite) at that time this flag is set, otherwise, it is reset.</li>
+			</ul>
+
+			<p class="sub-heading">RS1, RS0 (Register Selection Bank):</p>
+			<table class="register-bank-select">
+				<thead>
+					<tr>
+						<th>RS1</th>
+						<th>RS0</th>
+						<th>Register Bank</th>
+						<th>Address</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>00H-07H</td>
+					</tr>
+
+					<tr>
+						<td>0</td>
+						<td>1</td>
+						<td>1</td>
+						<td>08H-0FH</td>
+					</tr>
+
+					<tr>
+						<td>1</td>
+						<td>0</td>
+						<td>2</td>
+						<td>10H-17H</td>
+					</tr>
+
+					<tr>
+						<td>1</td>
+						<td>1</td>
+						<td>3</td>
+						<td>18H-1FH</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>The remaining two bits are general purpose status flag bits and can be used by the programmer for any purpose. In other words, they are user defined bits.</p>
+		</section>
+		<section class="main-section">
+			<header>Data Memory Oragnisation</header>
+			<p>128 byte memory</p>
+			<ul>
+				<li>R0 to R127 (00H to 7FH)</li>
+			</ul>
+
+			<p>Divided into three sections</p>
+			<ol>
+				<li>Register Banks (32)</li>
+				<ul>
+					<li>R0 to R31 (00H to 1FH)</li>
+				</ul>
+
+				<li>Bit Addressable RAM (16)</li>
+				<ul>
+					<li>R32 to R47 (20H to 2FH)</li>
+				</ul>
+
+				<li>Scratch Pad RAM (80)</li>
+				<ul>
+					<li>R48 to R127 (30H to 7FH)</li>
+				</ul>
+			</ol>
+
+			<figure>
+				<img src="Images/Ram_architecture.png" id="Ram-architecture" alt="8051 RAM Architecture">
+				<figcaption>8051 RAM Architecture</figcaption>
+			</figure>
+
+			<p class="sub-heading">RAM Allocation</p>
+			<ul>
+				<li>There is 128 bytes of on chip RAM in 8051 plus number of special function register.</li>
+				<li>These 128 bytes of RAM inside 8051 are assigned addresses 00H to 7FH.</li>
+				<li>Special function registers are assigned addresses from 80H to FFH</li>
+				<li>128-byte Data memory allocation is shown in the above figure</li>
+			</ul>
+
+			<p>These 128 bytes are divided into three groups:</p>
+			<ol>
+				<li>A total of 32 bytes from locations 00H 1FH are set aside for register banks and the stack.</li>
+				<li>2A total of 16 bytes from locations 20 H to 2FH are set aside for bit addressable read/write memory.</li>
+				<li>Remaining locations from 30H to 7FH are called as general-purpose RAM or scratch pad RAM.</li>
+			</ol>
+
+			<p class="sub-heading">Register bank in 8051 microcontrollers:</p>
+			<p>
+				A total of 32 bytes of RAM are set aside for the register banks and stacks.
+				These 32 bytes are divided into 4 banks of register in which each bank has 8-registers, R0 to R7. The above figure shows how the 32 bytes are allocated into 4 banks.
+				From the above figure, bank 1 uses the same RAM space as the stack. This is a major problem in programming 8051. We must either not use register bank 1, or we must allocate another area of RAM for stack.</li>
+			</p>
+
+			<p class="sub-heading">BIT addressable RAM</p>
+			<p>Out of the 128 bytes internal RAM of the 8051, 16 bytes of it are bit addressable.Each bit of sixteen bytes from 20H to 2FH has individual bit address.Bit address varies from 00H to 7FH as shown in the figure below.</p>
+		</section>
+
+		
+		<section class="main-section">
+			<header></header>
+		</section>
+		<section class="main-section">
+			<header></header>
+		</section>
+	</main>
+
+</body>
+</html>
