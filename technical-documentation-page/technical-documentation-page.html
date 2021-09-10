@@ -3,8 +3,20 @@
 <head>
 	<meta charset="utf-8">
 	<title>8051 Microcontroller Basics</title>
+	<link rel="stylesheet" type="text/css" href="technical-documentation-page.css">
 </head>
 <body>
+	<nav id="navbar">
+		<header>Microcontrollers and 8051</header>
+		<ul>
+			<li><a href="#What_is_a_microcontroller?" class="nav-link">What is a microcontroller?</a></li>
+			<li><a href="#Microcontroller_memory" class="nav-link">Microcontroller memory</a></li>
+			<li><a href="#Features_of_8051_mirocontroller" class="nav-link">Features of 8051 mirocontroller</a></li>
+			<li><a href="#Program_Status_Word_(PSW)" class="nav-link">Program Status Word (PSW)</a></li>
+			<li><a href="#Data_Memory_Organisation" class="nav-link">Data Memory Organisation</a></li>
+			<li><a href="#Hex_address_of_each_register" class="nav-link">Hex address of each register</a></li>
+		</ul>
+	</nav>
 	<main id="main-doc">
 		<section class="main-section" id="What_is_a_microcontroller?">
 			<header>What is a microcontroller?</header>
@@ -50,8 +62,8 @@
 				<li>Control Bus</li>
 			</ul>
 
-			<p class="sub-heading">Examples of calculating memory sizes based on Address Bus and Data Bus:<br>
-			NOTE: THe memory locations are displayed by hexadecimal numbers</p>
+			<p class="sub-heading">Examples of calculating memory sizes based on Address Bus and Data Bus:</p>
+			<p>NOTE: The memory locations are displayed by hexadecimal numbers</p>
 			<ol>
 				<li>Suppose P = 4 and N = 8</li>
 				<ul>
@@ -196,7 +208,7 @@
 			of memory (1) DATA RAM and (2) Programmable ROM / EPROM; Input/output ports, mode status and data registers.
 			These elements communicate through an eight-bit data bus which runs through the chip referred as internal data bus.</p>
 		</section>
-		<section class="main-section">
+		<section class="main-section" id="Program_Status_Word_(PSW)">
 			<header>Program Status Word (PSW)</header>
 			<table class="PSW-structure">
 				<caption>Bits of the PSW register</caption>
@@ -361,7 +373,7 @@
 
 			<p>The remaining two bits are general purpose status flag bits and can be used by the programmer for any purpose. In other words, they are user defined bits.</p>
 		</section>
-		<section class="main-section">
+		<section class="main-section" id="Data_Memory_Organisation">
 			<header>Data Memory Oragnisation</header>
 			<p>128 byte memory</p>
 			<ul>
@@ -415,15 +427,108 @@
 
 			<p class="sub-heading">BIT addressable RAM</p>
 			<p>Out of the 128 bytes internal RAM of the 8051, 16 bytes of it are bit addressable.Each bit of sixteen bytes from 20H to 2FH has individual bit address.Bit address varies from 00H to 7FH as shown in the figure below.</p>
+
+			<figure>
+				<img src="Images/BT_addressable_RAM.png" id="BIT-addressable-RAM" alt="BIT addressable RAM">
+				<figcaption>BIT addressable RAM</figcaption>
+			</figure>
+
+			<p>The rest must be accessed in byte format.The bit addressable RAM locations are 20 H to 2FH.These 16 bytes provide 128 bits of RAM, addressed as 0 to 127 (in decimal) or 00H to 7FH in hexadecimal.The internal RAM locations 20 H to 2FH are both byte addressable and also bit addressable.</p>
+
+			<p class="sub-heading">Scratch Pad RAM</p>
+			<p>30H-7FH is available to the user as data RAM. However, if the data pointer has been initialized to this area, enough bytes should be left aside to prevent SP data destruction.</p>
+
+			<figure>
+				<img src="Images/internal-external.png" id="internal-external" alt="internal and external memory">
+				<figcaption>Data internal and external memory</figcaption>
+			</figure>
+
+			<p class="sub-heading">Special Function Registers (SFR):</p>
+
+			<figure>
+				<img src="Images/sfr1.png" id="SFR-memory-map" alt="SFR Memory Map">
+				<figcaption>SFR memory map</figcaption>
+			</figure>
+
+			<figure>
+				<img src="Images/sfr2.png" id="SFR-bit-address" alt="SFR bit address">
+				<figcaption>SFR bit address</figcaption>
+			</figure>
+
+			<p>Unlike other microprocessor in the Intel Family, 8051 uses memory mapped I/O through a set of Special Function Registers (SFRS). SFR are of 128 bytes and that are implemented in the address space immediately above the 128 bytes of RAM. Fig. 1.14 shows SFR starts from 80 H and ends at FFH.SFR is a bit addressable area. All access to the four I/O ports, the CPU, interrupt control register, the timer / counter, UART and power control are performed through Special Function Registers (SFR) between 80 H and FFH.</p>
+
+			<p class="sub-heading">Input / Output Ports</p>
+			<ul>
+				<li>The 8051 each have 32 I/O pins configured as 4-eight-bit parallel ports. [P0, P1, P2 and P3].</li>
+				<li>Each pin will be input or output or both under software control.</li>
+				<li>After reset, 8051 writes logic 1 (Input) on every pins.</li>
+				<li>Port 0 and Port 2 in combination can be used to interface external memory.</li>
+				<li>Port-3 pins have special functions such as two external interrupt, two counter input, two special data lines, and two-timing control strobe.</li>
+			</ul>
+
+			<p class="sub-heading">Timer</p>
+			<ul>
+				<li>The 8051 has 16 bit timers that can be operated in four different modes.</li>
+				<li>Timer can be configured using Timer/counter control/status register.</li>
+				<li>These timers can also be used as counter that increments after each clock pulse applied to T0 and T1 pin.</li>
+			</ul>
+
+			<p class="sub-heading">Serial interface</p>
+			<ul>
+				<li>A full duplex asynchronous serial interface can be implemented on chip, using serial interface control circuitry.</li>
+				<li>The special feature of this circuit is a double buffered receiver.</li>
+			</ul>
+
+			<p class="sub-heading">Interrupts</p>
+			<ul>
+				<li>The 8051 has five hardware interrupt sources, one from the serial port, when transmission or reception is completed, two from the timers when overflow occurs, and two from the interrupt pin INT0 and INT1.</li>
+				<li>Each interrupt has its own vector location.</li>
+			</ul>
+
+			<p class="sub-heading">Input / Output Ports</p>
+			<ul>
+				<li>The 8051 each have 32 I/O pins configured as 4-eight-bit parallel ports. [P0, P1, P2 and P3].</li>
+				<li>Each pin will be input or output or both under software control.</li>
+				<li>After reset, 8051 writes logic 1 (Input) on every pins.</li>
+				<li>Port 0 and Port 2 in combination can be used to interface external memory.</li>
+				<li>Port-3 pins have special functions such as two external interrupt, two counter input, two special data lines, and two-timing control strobe.</li>
+			</ul>
+
+			<p class="sub-heading">Accumulator (A) and B registers</p>
+			<ul>
+				<li>Both of them are 8-bit registers.</li>
+				<li>Accumulator holds the source operand and receives the result of arithmetic instructions.</li>
+				<li>The accumulator can be source or destination for logical operations and number of special data movement instructions.</li>
+				<li>Several functions apply only to an accumulator such as rotate, parity computation, testing for zero.</li>
+				<li>B-register is an 8-bit register available for general purpose.</li>
+			</ul>
+
+			<p class="sub-heading">Stack Pointer (SP)</p>
+			<ul>
+				<li>It is an 8-bit register.</li>
+				<li>It is incremented before data is stored during PUSH and CALL instructions.</li>
+				<li>The stack array resides anywhere in on chip RAM.</li>
+				<li>The SP register is initialised to 07 H after a reset.</li>
+				<li>This causes the stack to begin at 08 H.</li>
+			</ul>
+
+			<p class="sub-heading">Data Pointer Register (DPTR)</p>
+			<ul>
+				<li>It is a sixteen (16)-bit register.</li>
+				<li>It consists of higher 8-bit (DPH) and lower 8-bit (DPL).</li>
+				<li>It is function is to hold 16-bit address.</li>
+				<li>It may be manipulated as a 16-bit data register or as two independent 8-bit register.</li>
+				<li>It serves as base register in indirect jumps, lookup table instructions and external data transfer..</li>
+			</ul>
 		</section>
 
 		
-		<section class="main-section">
-			<header></header>
+		<section class="main-section" id="Hex_address_of_each_register">
+			<header>Hex address of each register</header>
+			<img src="Images/instructions1.jpg" id="instructions1" alt="8051 instructions part 1"><br>
+			<img src="Images/instructions2.jpg" id="instructions2" alt="8051 instructions part 2">
 		</section>
-		<section class="main-section">
-			<header></header>
-		</section>
+
 	</main>
 
 </body>
