@@ -1,4 +1,3 @@
-/* #9933ff */
 body
 {
 	background-color: #e5ccff;
@@ -78,6 +77,11 @@ body
     
 }
 
+code
+{
+	font-size: 15px;
+}
+
 img
 {
 	display: block;
@@ -114,7 +118,42 @@ td
 	margin-bottom: 15px;
 }
 
-@media (max-width:  920px)
+#instructions1
 {
-	
+	margin-top: 30px;
+}
+
+@media (max-width: 920px)
+{
+	#navbar 
+	{
+		position: relative;
+		width: 100%;
+	}
+
+	#main-doc
+	{
+		margin: auto;
+	}
+}
+
+@media (max-width: 530px)
+{
+
+	body
+	{
+		margin: 0;
+	}
+
+	#main-doc
+	{
+		padding: 0;
+	}
+
+	#main-doc header
+	{
+		font-size: 30px;
+		width: 100%;
+		
+	}
 }

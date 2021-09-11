@@ -3,7 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<title>8051 Microcontroller Basics</title>
+	<meta id="viewport" name="viewport" content ="width=device-width" />
 	<link rel="stylesheet" type="text/css" href="technical-documentation-page.css">
+	<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </head>
 <body>
 	<nav id="navbar">
@@ -68,30 +70,30 @@
 				<li>Suppose P = 4 and N = 8</li>
 				<ul>
 					<li>Memory Size = 2<sup>4</sup> x 8 = 16 x 8 = 16 bytes</li>
-					<li>First Address = 00H</li>
-					<li>Last Address = 0FH</li>
+					<li>First Address = <code>00H</code></li>
+					<li>Last Address = <code>0FH</code></li>
 				</ul>
 
 				<li>Suppose P = 7 and N = 8</li>
 				<ul>
 					<li>Memory Size = 2<sup>7</sup> x 8 = 128 x 8 = 128 bytes</li>
-					<li>First Address = 00H</li>
-					<li>Last Address = 7FH</li>
+					<li>First Address = <code>00H</code></li>
+					<li>Last Address = <code>7FH</code></li>
 				</ul>
 
 				<li>Suppose P = 10 and N = 8</li>
 				<ul>
 					<li>Memory Size = 2<sup>10</sup> x 8 = 1024 x 8 = 1Kb</li>
-					<li>First Address = 00H</li>
-					<li>Last Address = 0FH</li>
+					<li>First Address = <code>00H</code></li>
+					<li>Last Address = <code>0FH</code></li>
 				</ul>
 
 
 				<li>Suppose P = 11 and N = 8</li>
 				<ul>
 					<li>Memory Size = 2<sup>11</sup> x 8 = 2048 x 8 = 2Kb</li>
-					<li>First Address = 00H</li>
-					<li>Last Address = 0FH</li>
+					<li>First Address = <code>00H</code></li>
+					<li>Last Address = <code>0FH</code></li>
 				</ul>
 			</ol>
 
@@ -113,49 +115,49 @@
 				<td>1</td>
 				<td>10</td>
 				<td>2<sup>10</sup> = 1024 x 8 = 1KB</td>
-				<td>000H to 3FFH</td>
+				<td><code>000H</code> to <code>3FFH</code></td>
 				</tr>
 
 				<tr>
 				<td>2</td>
 				<td>11</td>
 				<td>2<sup>11</sup> = 2048 x 8 = 1KB</td>
-				<td>000H to 7FFH</td>
+				<td><code>000H</code> to <code>7FFH</code></td>
 				</tr>
 
 				<tr>
 				<td>3</td>
 				<td>12</td>
 				<td>2<sup>12</sup> = 4096 x 8 = 1KB</td>
-				<td>000H to FFFH</td>
+				<td><code>000H</code> to <code>FFFH</code></td>
 				</tr>
 
 				<tr>
 				<td>4</td>
 				<td>13</td>
 				<td>2<sup>13</sup> = 8192 x 8 = 1KB</td>
-				<td>0000H to 1FFFH</td>
+				<td><code>0000H</code> to <code>1FFFH</code></td>
 				</tr>
 
 				<tr>
 				<td>5</td>
 				<td>14</td>
 				<td>2<sup>14</sup> = 16384 x 8 = 1KB</td>
-				<td>0000H to 3FFFH</td>
+				<td><code>0000H</code> to <code>3FFFH</code></td>
 				</tr>
 
 				<tr>
 				<td>6</td>
 				<td>15</td>
 				<td>2<sup>15</sup> = 32768 x 8 = 1KB</td>
-				<td>0000H to 7FFFFH</td>
+				<td><code>0000H</code> to <code>7FFFFH</code></td>
 				</tr>
 
 				<tr>
 				<td>7</td>
 				<td>16</td>
 				<td>2<sup>16</sup> = 65536 x 8 = 1KB</td>
-				<td>0000H to FFFFH</td>
+				<td><code>0000H</code> to <code>FFFFH</code></td>
 				</tr>
 				</tbody>
 			</table>
@@ -227,14 +229,14 @@
 
 				<tbody>
 					<tr>
-						<td>CY</td>
-						<td>AC</td>
-						<td>F0</td>
-						<td>RS1</td>
-						<td>RS0</td>
-						<td>OV</td>
+						<td><code>CY</code></td>
+						<td><code>AC</code></td>
+						<td><code>F0</code></td>
+						<td><code>RS1</code></td>
+						<td><code>RS0</code></td>
+						<td><code>OV</code></td>
 						<td>-</td>
-						<td>P</td>
+						<td><code>P</code></td>
 					</tr>
 				</tbody>
 
@@ -252,42 +254,42 @@
 
 				<tbody>
 					<tr>
-						<td>CY</td>
-						<td>PSW.7</td>
+						<td><code>CY</code></td>
+						<td><code>PSW.7</code></td>
 						<td>Carry Flag</td>
 					</tr>
 					<tr>
-						<td>AC</td>
-						<td>PSW.6</td>
+						<td><code>AC</code></td>
+						<td><code>ACPSW.6</code></td>
 						<td>Auxiliary Carry Flag. For BCD Operations</td>
 					</tr>
 					<tr>
-						<td>F0</td>
-						<td>PSW.5</td>
+						<td><code>ACF0</code></td>
+						<td><code>ACPSW.5</code></td>
 						<td>Flag 0. Available to the user for general purposes</td>
 					</tr>
 					<tr>
-						<td>RS1</td>
-						<td>PSW.4</td>
+						<td><code>ACRS1</code></td>
+						<td><code>ACPSW.4</code></td>
 						<td rowspan="2">Register bank select bits. Set by software to determine which registers are being used</td>
 					</tr>
 					<tr>
-						<td>RS0</td>
-						<td>PSW.3</td>
+						<td><code>ACRS0</code></td>
+						<td><code>ACPSW.3</code></td>
 					</tr>
 					<tr>
-						<td>OV</td>
-						<td>PSW.2</td>
+						<td><code>ACOV</code></td>
+						<td><code>ACPSW.2</code></td>
 						<td>Overflow Flag</td>
 					</tr>
 					<tr>
 						<td>-</td>
-						<td>PSW.1</td>
+						<td><code>ACPSW.1</code></td>
 						<td>Not used</td>
 					</tr>
 					<tr>
-						<td>P</td>
-						<td>PSW.0</td>
+						<td><code>ACP</code></td>
+						<td><code>ACPSW.0</code></td>
 						<td>Partiy Flag. Even Parity</td>
 					</tr>
 				</tbody>
@@ -299,7 +301,7 @@
 				<li>It is also referred as flag register.</li>
 				<li>Only 6 bits of the PSW are used by 8051.</li>
 				<li>Two unused bits are user definable flags.</li>
-				<li>Four of the flags are called as conditional flags. They are CY, P, AC and OV.</li>
+				<li>Four of the flags are called as conditional flags. They are <code>CY</code>, <code>P</code>, <code>AC</code> and <code>OV</code>.</li>
 				<li>Two of the flags are used to select register bank.</li>
 			</ul>
 
@@ -307,7 +309,7 @@
 			<ul>
 				<li>This flag is set whenever there is carry out from of bit.</li>
 				<li>This flag bit is affected after an 8-bit addition or subtraction.</li>
-				<li>It can also be set to 1 or 0 directly by an instruction such as ‘SETB’ (Set Bit Carry) and ‘CLR C’(Clear Carry).</li>
+				<li>It can also be set to 1 or 0 directly by an instruction such as ‘<code>SETB</code>’ (Set Bit Carry) and ‘<code>CLR C</code>’(Clear Carry).</li>
 			</ul>
 
 			<p class="sub-heading">AC (Auxiliary Flag):</p>
@@ -345,28 +347,28 @@
 						<td>0</td>
 						<td>0</td>
 						<td>0</td>
-						<td>00H-07H</td>
+						<td><code>00H</code>-<code>07H</code></td>
 					</tr>
 
 					<tr>
 						<td>0</td>
 						<td>1</td>
 						<td>1</td>
-						<td>08H-0FH</td>
+						<td><code>08H</code>-<code>0FH</code></td>
 					</tr>
 
 					<tr>
 						<td>1</td>
 						<td>0</td>
 						<td>2</td>
-						<td>10H-17H</td>
+						<td><code>10H</code>-<code>17H</code></td>
 					</tr>
 
 					<tr>
 						<td>1</td>
 						<td>1</td>
 						<td>3</td>
-						<td>18H-1FH</td>
+						<td><code>18H</code>-<code>1FH</code></td>
 					</tr>
 				</tbody>
 			</table>
@@ -377,24 +379,24 @@
 			<header>Data Memory Oragnisation</header>
 			<p>128 byte memory</p>
 			<ul>
-				<li>R0 to R127 (00H to 7FH)</li>
+				<li>R0 to R127 (<code>00H</code> to <code>7FH</code>)</li>
 			</ul>
 
 			<p>Divided into three sections</p>
 			<ol>
 				<li>Register Banks (32)</li>
 				<ul>
-					<li>R0 to R31 (00H to 1FH)</li>
+					<li>R0 to R31 (<code>00H</code> to <code>1FH</code>)</li>
 				</ul>
 
 				<li>Bit Addressable RAM (16)</li>
 				<ul>
-					<li>R32 to R47 (20H to 2FH)</li>
+					<li>R32 to R47 (<code>20H</code> to <code>2FH</code>)</li>
 				</ul>
 
 				<li>Scratch Pad RAM (80)</li>
 				<ul>
-					<li>R48 to R127 (30H to 7FH)</li>
+					<li>R48 to R127 (<code>30H</code> to <code>7FH</code>)</li>
 				</ul>
 			</ol>
 
@@ -406,16 +408,16 @@
 			<p class="sub-heading">RAM Allocation</p>
 			<ul>
 				<li>There is 128 bytes of on chip RAM in 8051 plus number of special function register.</li>
-				<li>These 128 bytes of RAM inside 8051 are assigned addresses 00H to 7FH.</li>
-				<li>Special function registers are assigned addresses from 80H to FFH</li>
+				<li>These 128 bytes of RAM inside 8051 are assigned addresses <code>00H</code> to <code>7FH</code>.</li>
+				<li>Special function registers are assigned addresses from <code>80H</code> to <code>FFH</code></li>
 				<li>128-byte Data memory allocation is shown in the above figure</li>
 			</ul>
 
 			<p>These 128 bytes are divided into three groups:</p>
 			<ol>
-				<li>A total of 32 bytes from locations 00H 1FH are set aside for register banks and the stack.</li>
-				<li>2A total of 16 bytes from locations 20 H to 2FH are set aside for bit addressable read/write memory.</li>
-				<li>Remaining locations from 30H to 7FH are called as general-purpose RAM or scratch pad RAM.</li>
+				<li>A total of 32 bytes from locations <code>00H</code> to <code>1FH</code> are set aside for register banks and the stack.</li>
+				<li>2A total of 16 bytes from locations <code>20H</code> to <code>2FH</code> are set aside for bit addressable read/write memory.</li>
+				<li>Remaining locations <code>30H</code>from  to <code>7FH</code> are called as general-purpose RAM or scratch pad RAM.</li>
 			</ol>
 
 			<p class="sub-heading">Register bank in 8051 microcontrollers:</p>
@@ -426,17 +428,17 @@
 			</p>
 
 			<p class="sub-heading">BIT addressable RAM</p>
-			<p>Out of the 128 bytes internal RAM of the 8051, 16 bytes of it are bit addressable.Each bit of sixteen bytes from 20H to 2FH has individual bit address.Bit address varies from 00H to 7FH as shown in the figure below.</p>
+			<p>Out of the 128 bytes internal RAM of the 8051, 16 bytes of it are bit addressable.Each bit of sixteen bytes from <code>20H</code> to <code>2FH</code> has individual bit address.Bit address varies from <code></code>00H to <code></code>7FH as shown in the figure below.</p>
 
 			<figure>
 				<img src="Images/BT_addressable_RAM.png" id="BIT-addressable-RAM" alt="BIT addressable RAM">
 				<figcaption>BIT addressable RAM</figcaption>
 			</figure>
 
-			<p>The rest must be accessed in byte format.The bit addressable RAM locations are 20 H to 2FH.These 16 bytes provide 128 bits of RAM, addressed as 0 to 127 (in decimal) or 00H to 7FH in hexadecimal.The internal RAM locations 20 H to 2FH are both byte addressable and also bit addressable.</p>
+			<p>The rest must be accessed in byte format.The bit addressable RAM locations are <code>20H</code> to <code>2FH</code>.These 16 bytes provide 128 bits of RAM, addressed as 0 to 127 (in decimal) or <code>00H</code> to <code>7FH</code> in hexadecimal.The internal RAM locations 20 H to 2FH are both byte addressable and also bit addressable.</p>
 
 			<p class="sub-heading">Scratch Pad RAM</p>
-			<p>30H-7FH is available to the user as data RAM. However, if the data pointer has been initialized to this area, enough bytes should be left aside to prevent SP data destruction.</p>
+			<p><code>30H</code>-<code>7FH</code> is available to the user as data RAM. However, if the data pointer has been initialized to this area, enough bytes should be left aside to prevent SP data destruction.</p>
 
 			<figure>
 				<img src="Images/internal-external.png" id="internal-external" alt="internal and external memory">
@@ -455,7 +457,7 @@
 				<figcaption>SFR bit address</figcaption>
 			</figure>
 
-			<p>Unlike other microprocessor in the Intel Family, 8051 uses memory mapped I/O through a set of Special Function Registers (SFRS). SFR are of 128 bytes and that are implemented in the address space immediately above the 128 bytes of RAM. Fig. 1.14 shows SFR starts from 80 H and ends at FFH.SFR is a bit addressable area. All access to the four I/O ports, the CPU, interrupt control register, the timer / counter, UART and power control are performed through Special Function Registers (SFR) between 80 H and FFH.</p>
+			<p>Unlike other microprocessor in the Intel Family, 8051 uses memory mapped I/O through a set of Special Function Registers (SFRS). SFR are of 128 bytes and that are implemented in the address space immediately above the 128 bytes of RAM. Fig. 1.14 shows SFR starts from 80 H and ends at FFH.SFR is a bit addressable area. All access to the four I/O ports, the CPU, interrupt control register, the timer / counter, UART and power control are performed through Special Function Registers (SFR) between <code>80H</code> and <code>FFH</code>.</p>
 
 			<p class="sub-heading">Input / Output Ports</p>
 			<ul>
@@ -508,8 +510,8 @@
 				<li>It is an 8-bit register.</li>
 				<li>It is incremented before data is stored during PUSH and CALL instructions.</li>
 				<li>The stack array resides anywhere in on chip RAM.</li>
-				<li>The SP register is initialised to 07 H after a reset.</li>
-				<li>This causes the stack to begin at 08 H.</li>
+				<li>The SP register is initialised to <code>07H</code> after a reset.</li>
+				<li>This causes the stack to begin at <code>08H</code>.</li>
 			</ul>
 
 			<p class="sub-heading">Data Pointer Register (DPTR)</p>
