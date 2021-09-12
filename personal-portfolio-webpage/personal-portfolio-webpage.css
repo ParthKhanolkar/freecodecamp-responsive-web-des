@@ -135,6 +135,37 @@ nav p
 	color: #1457ed;
 }
 
+footer
+{
+	background-color: #fbffc4;
+}
+
+#contact-me
+{
+	
+	margin-top: 0;
+	text-align: center;
+	font-size: 60px;
+    font-style: italic;
+    font-family: cursive;
+	padding-top: 30px;
+	color: #2280a4;
+
+}
+#freecodecamp-div, #github-div
+{
+	width: 10%;
+	margin: auto;
+}
+
+#profile-link, #github 
+{
+	text-decoration: none;
+	font-size: 35px;
+    font-family: cursive;
+}
+
+
 @media (max-width:  1265px)
 {
 	.project-tile
@@ -178,7 +209,8 @@ nav p
 
 @media (max-width: 645px)
 {
-	#welcome-h1{
+	#welcome-h1
+	{
 		font-size: 45px;
 	}
 	#welcome-p
@@ -186,18 +218,23 @@ nav p
 		font-size: 25px;
 	}
 
-	#projects-title
+	#projects-title, #contact-me
 	{
 		font-size: 40px;
 	}
 
-	.sec2 h2
+	.sec2 h2, #github, #freecodecamp
 	{
 		font-size: 25px;
 	}
 	.sec2 p
 	{
 		font-size: 20px;
+	}
+
+	#github-div, #freecodecamp-div
+	{
+		margin-left: 30%;
 	}
 	
 }
